@@ -1,0 +1,199 @@
+
+              if($str_dias==$fecha_ini && $str_hora_ini==$hora){
+                                        echo "<td style='background-color:red'>" .$fecha_ini." Hora: ". $hora . "</td>>";
+                                    }
+
+
+
+
+
+            $nuevelunes=Reserva::all();
+
+            //Lunes ->hora: 09
+
+                foreach ($nuevelunes as $fecha_ini) {
+                    $fechaini = $fecha_ini->fecha_hora_inicio;
+                    $fechafin = $fecha_ini->fecha_hora_fin;
+
+                    $str_dias = substr($fechaini, 0, 10);
+                    $str_hora_ini = substr($fechaini, 11, 2);
+                    $str_hora_fin = substr($fechafin, 11, 2);
+                    $hora_nueve = '09';
+                    $hora_diez = '10';
+                    $hora_once = '11';
+                    $hora_doce = '12';
+                    $hora_trece = '13';
+                    $hora_catorce = '14';
+                    $hora_quince = '15';
+                    $hora_dieciseis = '16';
+                    $hora_diecisiete = '17';
+                    $hora_diecinueve = '19';
+                    $hora_veinte = '20';
+
+                    $dias = array('Domingo', 'Lunes', 'Martes', 'Miercoles', 'Jueves', 'Viernes,', 'Sabado');
+                    $dia = $dias[date('w', strtotime($str_dias))];
+
+                    $dia_lunes = 'Lunes';
+                    $dia_martes = 'Martes';
+                    $dia_miercoles = 'Miercoles';
+                    $dia_jueves = 'Jueves';
+                    $dia_viernes = 'Viernes';
+                    $dia_sabado = 'Sabado';
+                    $dia_domingo = 'Domingo';
+
+
+                    //Lunes ->hora: 09
+                    if (($dia == $dia_lunes) && ($str_hora_ini == $hora_nueve) && ($str_hora_fin == $hora_once)) {
+
+                        echo '<td rowspan="2" style="background-color:#ed5340 ">' . $dia_lunes . ": " . $str_dias . " Hora, desde las: " . $str_hora_ini . " Hasta las: " . $str_hora_fin . "</br>" . $fecha_ini->descripcion . "</br>" . '</td>';
+                    } else
+                        if (($dia == $dia_lunes) && ($str_hora_ini == $hora_nueve)) {
+                            echo '<td style="background-color:ed5340">' . $dia_lunes . ": " . $str_dias . " Hora, desde las: " . $str_hora_ini . " Hasta las: " . $str_hora_fin . "</br>" . $fecha_ini->descripcion . "</br>" . '</td>';
+                        }
+                }
+                if(($hora_nueve!=$str_hora_ini)&&($dia_lunes!=$dia)) {
+                    echo "<td>Disponible</td>";
+                }
+
+
+                    //Martes->hora 09
+
+                   foreach ($nuevelunes as $fecha_ini) {
+                        $fechaini = $fecha_ini->fecha_hora_inicio;
+                        $fechafin = $fecha_ini->fecha_hora_fin;
+
+                        $str_dias = substr($fechaini, 0, 10);
+                        $str_hora_ini = substr($fechaini, 11, 2);
+                        $str_hora_fin = substr($fechafin, 11, 2);
+                        $hora_nueve = '09';
+                        $hora_diez = '10';
+                        $hora_once = '11';
+                        $hora_doce = '12';
+                        $hora_trece = '13';
+                        $hora_catorce = '14';
+                        $hora_quince = '15';
+                        $hora_dieciseis = '16';
+                        $hora_diecisiete = '17';
+                        $hora_diecinueve = '19';
+                        $hora_veinte = '20';
+
+                        $dias = array('Domingo', 'Lunes', 'Martes', 'Miercoles', 'Jueves', 'Viernes,', 'Sabado');
+                        $dia = $dias[date('w', strtotime($str_dias))];
+
+                        $dia_lunes = 'Lunes';
+                        $dia_martes = 'Martes';
+                        $dia_miercoles = 'Miercoles';
+                        $dia_jueves = 'Jueves';
+                        $dia_viernes = 'Viernes';
+                        $dia_sabado = 'Sabado';
+                        $dia_domingo = 'Domingo';
+                        if (($dia == $dia_martes) && ($str_hora_ini == $hora_nueve) && ($str_hora_fin == $hora_doce)) {
+
+                            echo '<td rowspan="2" style="background-color:#ed5340 ">' . $dia_martes . ": " . $str_dias . " Hora, desde las: " . $str_hora_ini . " Hasta las: " . $str_hora_fin . "</br>" . $fecha_ini->descripcion . "</br>" . '</td>';
+                        } else
+                            if (($dia == $dia_martes) && ($str_hora_ini == $hora_nueve)) {
+                                echo '<td style="background-color:ed5340">' . $dia_martes . ": " . $str_dias . " Hora, desde las: " . $str_hora_ini . " Hasta las: " . $str_hora_fin . "</br>" . $fecha_ini->descripcion . "</br>" . '</td>';
+                            }
+                       if(($hora_nueve!=$str_hora_ini)&&($dia_martes!=$dia)) {
+                           echo "<td>Disponible</td>";
+                       }
+                    }
+
+
+
+
+
+
+             //Miercoles ->hora:09
+                         foreach($nuevelunes as $fecha_ini) {
+                $fechaini = $fecha_ini->fecha_hora_inicio;
+                $fechafin = $fecha_ini->fecha_hora_fin;
+
+                $str_dias = substr($fechaini, 0, 10);
+                $str_hora_ini = substr($fechaini, 11, 2);
+                $str_hora_fin = substr($fechafin, 11, 2);
+                $hora_nueve='09';
+                $hora_diez = '10';
+                $hora_once='11';
+                $hora_doce = '12';
+                $hora_trece='13';
+                $hora_catorce='14';
+                $hora_quince='15';
+                $hora_dieciseis='16';
+                $hora_diecisiete='17';
+                $hora_diecinueve='19';
+                $hora_veinte='20';
+
+                $dias = array('Domingo', 'Lunes', 'Martes', 'Miercoles', 'Jueves', 'Viernes,', 'Sabado');
+                $dia = $dias[date('w', strtotime($str_dias))];
+
+                $dia_lunes='Lunes';
+                $dia_martes = 'Martes';
+                $dia_miercoles='Miercoles';
+                $dia_jueves='Jueves';
+                $dia_viernes='Viernes';
+                $dia_sabado='Sabado';
+                $dia_domingo='Domingo';
+                if (($dia == $dia_miercoles) && ($str_hora_ini == $hora_nueve) && ($str_hora_fin == $hora_doce)) {
+
+                    echo '<td rowspan="2" style="background-color:#ed5340 ">' . $dia_miercoles . ": " . $str_dias . " Hora, desde las: " . $str_hora_ini . " Hasta las: " . $str_hora_fin . "</br>" . $fecha_ini->descripcion . "</br>" . '</td>';
+                } else
+                    if (($dia == $dia_miercoles) && ($str_hora_ini == $hora_nueve)) {
+                        echo '<td style="background-color:ed5340">' . $dia_miercoles . ": " . $str_dias . " Hora, desde las: " . $str_hora_ini . " Hasta las: " . $str_hora_fin . "</br>" . $fecha_ini->descripcion . "</br>" . '</td>';
+                    }
+
+            }
+
+           /* if (($dia != $dia_miercoles) && ($str_hora_ini != $hora_nueve)) {
+                echo '<td>Disponible</td>';
+            } */
+
+
+               //Jueves ->hora:09
+                           foreach($nuevelunes as $fecha_ini) {
+                $fechaini = $fecha_ini->fecha_hora_inicio;
+                $fechafin = $fecha_ini->fecha_hora_fin;
+
+                $str_dias = substr($fechaini, 0, 10);
+                $str_hora_ini = substr($fechaini, 11, 2);
+                $str_hora_fin = substr($fechafin, 11, 2);
+                $hora_nueve='09';
+                $hora_diez = '10';
+                $hora_once='11';
+                $hora_doce = '12';
+                $hora_trece='13';
+                $hora_catorce='14';
+                $hora_quince='15';
+                $hora_dieciseis='16';
+                $hora_diecisiete='17';
+                $hora_diecinueve='19';
+                $hora_veinte='20';
+
+                $dias = array('Domingo', 'Lunes', 'Martes', 'Miercoles', 'Jueves', 'Viernes,', 'Sabado');
+                $dia = $dias[date('w', strtotime($str_dias))];
+
+                $dia_lunes='Lunes';
+                $dia_martes = 'Martes';
+                $dia_miercoles='Miercoles';
+                $dia_jueves='Jueves';
+                $dia_viernes='Viernes';
+                $dia_sabado='Sabado';
+                $dia_domingo='Domingo';
+                if (($dia == $dia_jueves) && ($str_hora_ini == $hora_nueve) && ($str_hora_fin == $hora_doce)) {
+
+                    echo '<td rowspan="2" style="background-color:#ed5340 ">' . $dia_jueves . ": " . $str_dias . " Hora, desde las: " . $str_hora_ini . " Hasta las: " . $str_hora_fin . "</br>" . $fecha_ini->descripcion . "</br>" . '</td>';
+                } else
+                    if (($dia == $dia_jueves) && ($str_hora_ini == $hora_nueve)) {
+                        echo '<td style="background-color:ed5340">' . $dia_jueves . ": " . $str_dias . " Hora, desde las: " . $str_hora_ini . " Hasta las: " . $str_hora_fin . "</br>" . $fecha_ini->descripcion . "</br>" . '</td>';
+                    }
+
+
+            }
+
+                if (($dia == $dia_miercoles) && ($str_hora_ini == $hora_nueve)) {
+                    echo '<td>Disponible</td>';
+                }
+
+
+
+

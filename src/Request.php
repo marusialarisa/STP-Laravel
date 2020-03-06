@@ -31,7 +31,7 @@ private function extractURI(){
         case 1:
             //EL FICHERO POR DEFECTO SI NO SE HA INDICADO NADA
             if($this->arrURI[0]==""){
-                $this->setController('default');
+                $this->setController('sede');
             }else{
                 $this->setController($this->arrURI[0]);
             }

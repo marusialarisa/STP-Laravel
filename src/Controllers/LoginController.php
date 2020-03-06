@@ -6,6 +6,11 @@ namespace Rentit\Controllers;
 
 use Rentit\Controller;
 
+use Rentit\Models\Database;
+use Rentit\Models\Registrar;
+
+use Rentit\Models\Session;
+new Database();
 final class LoginController extends Controller
 {
     public function __construct($request)
@@ -18,63 +23,52 @@ final class LoginController extends Controller
     public function index()
 
     {
-        $data = ['title' => 'Autenticacion de usuarios'];
+        $data = ['title' => 'STP'];
 
         $this->render($data);
     }
-        function error() { throw new \Exception("[ERROR::]:Non existent method"); }
-
-
-
-    public function getSingleResult($sql, $params = null)
-    {
-        $db=$this->getDB();
-        $sentencia = $this->query($db, $sql, $params);
-        $resultados = $this->row_extract_one($sentencia);
-        return $resultados;
+        function error() {
+        throw new \Exception("[ERROR::]:Non existent method");
     }
 
-    /**
-     * @return mixed
-     */
-    public function getResults($sql, $params = null)
-    {
-        $db = $this->getDB();
-        $sentencia = $this->query($db, $sql, $params);
-        $resultados = $this->row_extracts($sentencia);
-        return $resultados;
 
 
-    }
     public function login(){
-        if (isset($_POST)){
-            if (!empty($_POST['user']) && !empty($_POST['pwd'])){
-                $pass= hash('sha256', $_POST['pwd']);
-                $params=[':user'=>$_POST['user'],
-                    ':pwd' => $pass];
+        if(!empty($_REQUEST['username'])&&(!empty($_REQUEST['password']))){
+            $username=filter_input(INPUT_POST,'username',FILTER_SANITIZE_STRING);
+            $passwd_str=filter_input(INPUT_POST,'password',FILTER_SANITIZE_STRING);
+            var_dump('DEBUG ENTRA ' . $username);
 
-                $sql="SELECT * FROM users WHERE user= :user AND pwd= :pwd;";
-                $result = $this->getSingleResult($sql, $params);
-                if (is_array($result)){
+            session_name($username);
 
-                    $_SESSION['user']=$_POST['user'];
-                    header('location:/');
-                    return true;
-                }else{
+            $username = Registrar::where('username', $username)->first();
 
-                    header('location:/login');
-                    return false;
-                }
-            } else{
-                header('location:/login');
+         //   var_dump($username->password);
+         //   var_dump($passwd_str);
+        //    var_dump(password_verify($passwd_str, $username->password));
+
+          //  var_dump('VERIFICA?: '.password_verify($passwd_str, $username->password));
+
+            if ($username != null && password_verify($passwd_str, $username->password)) {
+
+                $_SESSION['username'] = $_POST['username'];
+
+                session_start();
+
+                var_dump('DEBUG USERNAME: '.$_POST['username']);
+              //  Session::set('username',$username);
+               // Session::set('logged',true);
+
+                header('Location:/');
+                return true;
             }
+               else{
+                  // header('location:/login');
+                   $this->error("Password o usuario incorrecta");
 
-        } else{
-            return false;
+
+
+               }
         }
-
     }
-
-
-
 }

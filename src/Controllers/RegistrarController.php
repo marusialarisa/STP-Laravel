@@ -6,6 +6,9 @@ namespace Rentit\Controllers;
 
 use Rentit\Controller;
 
+use Rentit\Models\Database;
+use Rentit\Models\Registrar;
+new Database();
 final class RegistrarController extends Controller
 {
     public function __construct($request)
@@ -17,56 +20,84 @@ final class RegistrarController extends Controller
     public function index()
 
     {
-        $data = ['title' => 'Crea una cuenta'];
+        $data = ['title' => 'STP'];
 
         $this->render($data);
     }
-        function error() { throw new \Exception("[ERROR::]:Non existent method"); }
 
-
-        /**
-         * @param $sql
-         * @param null $params
-         * @return mixed
-         */
-        public function getSingleResult($sql, $params = null)
+    function error()
     {
-        $db=$this->getDB();
-        $sentencia = $this->query($db, $sql, $params);
-        $resultados = $this->row_extract_one($sentencia);
-        return $resultados;
+        throw new \Exception("[ERROR::]:Non existent method");
     }
 
-        public function getResults($sql, $params = null)
+
+
+
+
+    public function create_user($username, $password)
     {
-        $db=$this->getDB();
-        $sentencia = $this->query($db, $sql, $params);
-        $resultados = $this->row_extracts($sentencia);
-        return $resultados;
+        $user = Registrar::create([
+
+            'username' => $username,
+            'password' => $password]);
+
+       // echo 'User created';
+        return $user;
     }
 
-        public function registrar()
+    public function registrar()
     {
-        if (isset($_POST)){
 
-                $pass= hash('sha256', $_POST['pwd']);
-                $params=[':user'=>$_POST['user'],
-                    ':pwd' => $pass];
-            $sql = "INSERT INTO users (user, pwd) VALUES (:user, :pwd);";
-            $result = $this->getSingleResult($sql, $params);
-            if (!is_array($result)) {
-                session_start();
-                $_SESSION['user'] = $_POST['user'];
-                header('location:/');
+        if (!empty($_REQUEST['username']) &&
+            !empty($_REQUEST['password']) &&
+            !empty($_REQUEST['password2'])
+        ) {
+
+
+            $username = filter_input(INPUT_POST, 'username', FILTER_SANITIZE_STRING);
+            $passwd1 = filter_input(INPUT_POST, 'password', FILTER_SANITIZE_STRING);
+            $passwd2 = filter_input(INPUT_POST, 'password2', FILTER_SANITIZE_STRING);
+
+          //  session_id();
+
+            session_name($username);
+
+
+            if ($passwd1 == $passwd2) {
+                $passwdhash = password_hash($passwd1, PASSWORD_ARGON2I);
+
+
+               try {
+
+                    $user = $this->create_user($username, $passwdhash);
+                   var_dump($user);
+
+                   $_SESSION['username'] = $_POST['username'];
+
+                   session_start();
+                   
+
+                    header('location:/');
                 return true;
+
+                } catch (\Exception $e) {
+                    $this->error($e->getMessage());
+
+                }
+
+
             } else {
-                header('location:/registrar');
-                return false;
+                $this->error("Password does not match");
             }
-        } else {
-            return false;
         }
+        $this->error("Fill the form");
+
+
     }
+
+
 
 }
+
+
 

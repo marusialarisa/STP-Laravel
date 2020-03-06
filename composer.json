@@ -1,11 +1,13 @@
-{
+{   "name": "illuminate-example/stp-laravel",
+  "description": "Reservar salas",
+  "type": "project",
 	"autoload":{
 		"psr-4":{
 			"Rentit\\":"src/"
 		}
 	},
 	"require": {
-		"ext.pdo": "*",
-		"ext.json": "*"
+
+		"illuminate/database": "^6.12"
 	}
 }

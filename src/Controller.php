@@ -6,6 +6,8 @@ namespace Rentit;
 
 //use http\Exception;
 
+use Rentit\Models\Database;
+
 abstract class Controller implements View,Model
 {
     protected $request;
@@ -33,6 +35,8 @@ abstract class Controller implements View,Model
   * $params  =   los parametros (los valores que cojen nuestras variables en la sentencia sql)
   */
 
+
+/*
     function getDB(){
         $db=DB::singleton(); //para hacer instancia a unico objeto(vive en un objeto)
         return $db;
@@ -57,6 +61,8 @@ abstract class Controller implements View,Model
      * Aqui pasamos $stmt que se obtiene de "private function query($db, $sql, $params = null)"
      */
 
+
+/*
     protected function row_extract_one($stmt) {
         $rows = $stmt->fetch(\PDO::FETCH_ASSOC);
         return $rows;
@@ -67,4 +73,6 @@ abstract class Controller implements View,Model
         $rows=$stmt->fetchAll(\PDO::FETCH_ASSOC);
         return $rows;
     }
+    */
+
 }
