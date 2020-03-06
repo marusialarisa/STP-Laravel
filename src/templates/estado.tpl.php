@@ -102,7 +102,7 @@ use Rentit\Models\Reserva; ?>
               foreach($horastotales as $fila){
                     echo '<tr>';
                     foreach ($fila as $fecha){
-              //   echo '<td>'.$fecha.'</td>';
+
 
 
 
@@ -157,7 +157,9 @@ use Rentit\Models\Reserva; ?>
                             if ($fechaini == $fecha) {
                                 echo "<td style='background-color:red'>" . $fechaini . "</td>";
 
+
                             }
+
 
                         }
 
@@ -171,11 +173,15 @@ use Rentit\Models\Reserva; ?>
                                         if ($hora_once == $fecha) {
                                             echo "<th style='background-color:lightblue'>" . $hora_once . "</th>";
                                         }else
-                                            echo "<th style='background-color:green'></th>";
+                             if ($fechaini != $fecha ) {
+                            echo "<td style='background-color:green'>Disp</td>";
 
+                        }
 
 
                     }
+
+
 
                   echo '</tr>';
 
