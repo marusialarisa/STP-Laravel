@@ -75,8 +75,9 @@ class EstadoController extends Controller
 
                         $conexion = mysqli_connect($servidor, $usuario, $contrasena);
                          $basedatos = mysqli_select_db($conexion, $db);
-                        $consulta="SELECT * FROM reserva";
+                       $consulta="SELECT * FROM reserva";
 
+                     //   $consulta = "SELECT * FROM `reserva` WHERE fecha_hora_inicio =:fecha_hora_inicio";
 
                          // $consulta = "SELECT * FROM `reserva` WHERE fecha_hora_inicio =STR_TO_DATE('2020-03-05 10:00:00', '%Y-%m-%d %H:%i:%s')";
 

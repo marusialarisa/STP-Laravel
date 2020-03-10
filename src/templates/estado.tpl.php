@@ -81,11 +81,11 @@ use Rentit\Models\Reserva; ?>
 
 
 
-        <tr>
 
-    <!----  <form action="/estado/consultar" method="post">
+
+   <!----  <form action="/estado/consultar" method="post">
               <input type="submit" id="sub" name="submit" value="Entra"><br>
-          </form> ---->
+          </form> --->
 
                 <?php
 
@@ -97,29 +97,29 @@ use Rentit\Models\Reserva; ?>
                                     ];
 
 
-         //   foreach($horastotales as $fecha_ini=>$hora) {
 
-              foreach($horastotales as $fila){
+
+
+
+                   foreach($horastotales as $fila){
                     echo '<tr>';
                     foreach ($fila as $fecha){
 
+                        //   echo '<td>'.$fecha.'</td>';
 
-
-
-                $usuario = "root";
+                  $usuario = "root";
                   $contrasena = "linuxlinux";
                   $servidor = 'localhost';
                   $db = "salas";
 
                   $conexion = mysqli_connect($servidor, $usuario, $contrasena);
                   $basedatos = mysqli_select_db($conexion, $db);
-              $consulta="SELECT * FROM reserva";
+                  $consulta="SELECT * FROM reserva";
 
 
-              //  $consulta = "SELECT * FROM `reserva` WHERE fecha_hora_inicio =STR_TO_DATE('2020-03-05 10:00:00', '%Y-%m-%d %H:%i:%s')";
-              //    $consulta="SELECT * FROM `reserva` WHERE fecha_hora_inicio=:fecha_hora_inicio;";
+                  //   $consulta = "SELECT * FROM `reserva` WHERE fecha_hora_inicio =STR_TO_DATE('2020-03-02 09:00:00', '%Y-%m-%d %H:%i:%s')";
 
-                        //   $consulta="SELECT * FROM `reserva` WHERE fecha_hora_inicio <=STR_TO_DATE('2020-03-04 09:20:00', '%Y-%m-%d %H:%i:%s') and fecha_hora_fin >=STR_TO_DATE('2020-03-04 09:00:00', '%Y-%m-%d %H:%i:%s') ";
+                  //    $consulta="SELECT * FROM `reserva` WHERE fecha_hora_inicio <=STR_TO_DATE('2020-03-02 09:20:00', '%Y-%m-%d %H:%i:%s') and fecha_hora_fin >=STR_TO_DATE('2020-03-04 09:00:00', '%Y-%m-%d %H:%i:%s') ";
 
                   //     $fechadia=$_POST['fecha_hora_inicio'];
 
@@ -129,7 +129,13 @@ use Rentit\Models\Reserva; ?>
                      //   echo '<td>'.$hora.'</td>';
 
 
+                        $fila='<td>';
+
+                // echo $fila;
+
+
                         while ($columna = mysqli_fetch_array($resultado)) {
+
 
                             $fechaini = $columna['fecha_hora_inicio'];
                             $fechafin = $columna['fecha_hora_fin'];
@@ -138,86 +144,142 @@ use Rentit\Models\Reserva; ?>
                             $str_hora_ini = substr($fechaini,11,2);
                             $str_hora_fin = substr($fechafin,11,2);
 
+                          //  var_dump($str_hora_fin);die;
+
 
                             $horaNueve='09';
                             $horaDiez='10';
                             $horaOnce='11';
                             $horaDoce='12';
+                            $horaTrece='13';
 
-                            $hora_nueve = '9-10';
-                            $hora_diez = '10-11';
-                            $hora_once = '11-12';
+                            $primero="1";
+                            $segundo="2";
 
-                            $row_primero='rowspan';
+                   /* if($fechaini==$fecha){
+                                $fila="<td style='color:red'>" . $fechaini ." Hasta las: ".$str_hora_fin. "</td>";
+                                 echo $fila;
+                         } */
 
-                            $row_segundo='2';
-                            $row_tercero='3';
-                            $row_cuarto='4';
-
-                            if ($fechaini == $fecha) {
-                                echo "<td style='background-color:red'>" . $fechaini . "</td>";
+                      if ($fechaini == $fecha && $str_hora_ini==$horaNueve && $str_hora_fin == $horaDiez) {
 
 
+                               $fila="<td style='color:red'>" . $fechaini ." Hasta las: ".$str_hora_fin. "</td>";
+                               $primero=true;
+
+                               echo $fila;
+                            }else
+
+                               if ($fechaini == $fecha && $str_hora_ini==$horaNueve && $str_hora_fin == $horaOnce && $primero=true) {
+                                   $fila="<td style='color:red'>" . $fechaini ." Hasta las: ".$str_hora_fin. "</td>";
+                                 //  $fila = "<td rowspan=".$segundo." style='color:red'>" . $fechaini . " Hasta las: " . $str_hora_fin . "</td>";
+                                   $segundo=true;
+                                  $primero=false;
+                                   echo $fila;
+
+                               }
+                               else
+                            if ($fechaini == $fecha && $str_hora_ini==$horaDiez && $str_hora_fin == $horaOnce) {
+
+                                       $fila= "<td style='color:red'>" . $fechaini ." Hasta las: ".$str_hora_fin. "</td>";
+                                       echo $fila;
+                                   }
+                            if ($fechaini == $fecha && $str_hora_ini==$horaDiez && $str_hora_fin == $horaDoce){
+
+                                $fila= "<td style='color:red'>" . $fechaini ." Hasta las: ".$str_hora_fin. "</td>";
+                                echo $fila;
                             }
+                                   /*
+                               else  if ($fechaini == $fecha && $str_hora_ini==$horaDiez && $str_hora_fin == $horaOnce && $primero==true) {
+                                   $fila="<td style='color:red'>" . $fechaini ." Hasta las: ".$str_hora_fin. "</td>";
+                                   echo $fila;
+                               }
+                               else
+                                   if ($fechaini == $fecha && $str_hora_ini==$horaDiez && $str_hora_fin == $horaOnce && $primero==false) {
+
+                                       if ($fechaini == $fecha && $str_hora_ini == $horaNueve && $str_hora_fin == $horaOnce && $primero==false) {
+                                           // nada
+                                         //  $fila = "<td style='color:red'>" . $fechaini . " Hasta las: " . $str_hora_fin . "</td>";
+                                         //  echo $fila;
+                                       }
+                                       }
+
+
+
+
+
+
+
+
+
+                             /*       else
+
+                                  if ($fechaini == $fecha && $str_hora_ini==$horaDiez && $str_hora_fin == $horaOnce) {
+
+                                       $fila= "<td style='color:red'>" . $fechaini ." Hasta las: ".$str_hora_fin. "</td>";
+                                       echo $fila;
+                                   }
+                                 else
+                                       if ($fechaini == $fecha && $str_hora_ini==$horaDiez && $str_hora_fin == $horaDoce) {
+
+                                         // $fila=  "<td rowspan='2' style='color:red'>" . $fechaini ." Hasta las: ".$str_hora_fin. "</td>";
+
+                                       }
+                            /*         else
+
+                                        if ($fechaini == $fecha && $str_hora_ini==$horaOnce && $str_hora_fin == $horaDoce) {
+
+                                            echo "<span style='color:red'>" . $fechaini ." Hasta las: ".$str_hora_fin. "</span>";
+                                        }
+                                        else
+                                            if ($fechaini == $fecha && $str_hora_ini==$horaOnce && $str_hora_fin == $horaTrece) {
+
+                                                echo "<span style='color:red'>" . $fechaini ." Hasta las: ".$str_hora_fin. "</span>";
+                                            }
+            */
 
 
                         }
+                        $hora_nueve = '9-10';
+                        $hora_diez = '10-11';
+                        $hora_once = '11-12';
 
 
-                                if ($hora_nueve == $fecha) {
-                                    echo "<th style='background-color:lightblue'>" . $hora_nueve . "</th>";
+                             if ($hora_nueve == $fecha) {
+                                $fila="<th style='background-color:lightblue'>" . $hora_nueve . "</th>";
+                                //  echo $hora_nueve;
+                                 echo $fila;
+
                                 } else
                                     if ($hora_diez == $fecha) {
-                                        echo "<th style='background-color:lightblue'>" . $hora_diez . "</th>";
+                                        $fila="<th style='background-color:lightblue'>" . $hora_diez . "</th>";
+                                          // echo $hora_diez;
+                                        echo $fila;
+
                                     } else
                                         if ($hora_once == $fecha) {
-                                            echo "<th style='background-color:lightblue'>" . $hora_once . "</th>";
-                                        }else
-                             if ($fechaini != $fecha ) {
-                            echo "<td style='background-color:green'>Disp</td>";
+                                            $fila="<th style='background-color:lightblue'>" . $hora_once . "</th>";
+                                               //echo $hora_once;
+                                            echo $fila;
+                                        }
 
-                        }
+                                        else
+                                            if ($fecha != $fechaini) {
+                                              $fila="<td style='background-color:green'>";
+                                              echo $fila;
+                                             }
 
+
+
+
+
+                        echo '</td>';
 
                     }
-
-
 
                   echo '</tr>';
 
               }
-
-
-
-                /*  while ($columna = mysqli_fetch_array($resultado)) {
-
-                      $fechaini = $columna['fecha_hora_inicio'];
-
-                        $hora_nueve='9-10';
-                        $hora_diez='10-11';
-
-                      if ($fechaini == $fecha) {
-
-                      echo "<td style='background-color:red'>" . $fecha . "</td>";
-                         }
-                      else
-                          if($hora_nueve==$fecha){
-                          echo "<td style='background-color:lightblue'>9-10</td>";
-                      } else
-                              if($hora_diez==$fecha){
-                                  echo "<td style='background-color:lightblue'>10-11</td>";
-                              }
-
-                          else if ($fechaini != $fecha) {
-
-                            echo "<td style='background-color:green'></td>";
-                          }
-
-
-
-                  } */
-
-
 
 
 

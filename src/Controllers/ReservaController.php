@@ -79,10 +79,10 @@ class ReservaController extends Controller
 
                     header('location:/estado');
 
-        }else {
+
+             }else {
             $this->error("Fill the form");
         }
-
 
     }
 
