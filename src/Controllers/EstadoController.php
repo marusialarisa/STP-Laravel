@@ -142,8 +142,8 @@ class EstadoController extends Controller
 
                 var_dump($columna['fecha_hora_inicio']);
             }
-    }
-*/
+    } */
+
 
     public function logIn(){
         var_dump($_POST);

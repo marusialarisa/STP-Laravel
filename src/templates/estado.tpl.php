@@ -141,10 +141,7 @@ use Rentit\Models\Reserva; ?>
                         $hora_dieciocho= '18-19';
                         $hora_diecinueve ='19-20';
 
-
                         $lunes_horaNueve='2020-03-02 09:00:00';
-
-
 
                         if ($hora_nueve == $fecha) {
                             $fila="<th style='background-color:lightblue'>" . $hora_nueve . "</th>";
@@ -232,7 +229,7 @@ use Rentit\Models\Reserva; ?>
                                     $horaDieciseis = '16';
                                     $horaDiecisiete = '17';
                                     $horaDieciocho = '18';
-                                    $horaDieciseis = '19';
+                                    $horaDiecinueve = '19';
                                     $horaVente = '20';
 
                                     $primero = "1";
@@ -251,7 +248,7 @@ use Rentit\Models\Reserva; ?>
 
                                      }    else if ($fechaini == $fecha && $str_hora_ini == $horaNueve && $str_hora_fin == $horaOnce && $primero = true) {
                                            $fila = "<td style='background-color:red'" . $fechaini . " Hasta las: " . $str_hora_fin;
-                                        //  $fila = "<td rowspan=".$segundo." style='background-color:red'" . $fechaini . " Hasta las: " . $str_hora_fin ." ".$descr. "</td>";
+                                       //  $fila = "<td rowspan=".$segundo." style='background-color:red'" . $fechaini . " Hasta las: " . $str_hora_fin ." ".$descr. "</td>";
                                          $segundo = true;
                                          $primero = false;
                                          echo $fila;
@@ -284,6 +281,103 @@ use Rentit\Models\Reserva; ?>
 
                                      }
                                      //12-13
+                                     else if ($fechaini == $fecha && $str_hora_ini == $horaDoce && $str_hora_fin == $horaTrece) {
+                                         $fila = "<td style='background-color:red'" . $fechaini . " Hasta las: " . $str_hora_fin . " " . $descr;
+                                         $primero = true;
+                                         echo $fila;
+                                     } else if ($fechaini == $fecha && $str_hora_ini == $horaDoce && $str_hora_fin == $horaCatorce && $primero = true) {
+                                         $fila = "<td style='background-color:red'" . $fechaini . " Hasta las: " . $str_hora_fin;
+                                         //   $fila = "<td rowspan=".$segundo." style='background-color:red'" . $fechaini . " Hasta las: " . $str_hora_fin ." ".$descr. "</td>";
+                                         $segundo = true;
+                                         $primero = false;
+                                         echo $fila;
+
+                                     }
+                                     //13-14
+                                     else if ($fechaini == $fecha && $str_hora_ini == $horaTrece && $str_hora_fin == $horaCatorce) {
+                                         $fila = "<td style='background-color:red'" . $fechaini . " Hasta las: " . $str_hora_fin . " " . $descr;
+                                         $primero = true;
+                                         echo $fila;
+                                     } else if ($fechaini == $fecha && $str_hora_ini == $horaTrece && $str_hora_fin == $horaQuinze && $primero = true) {
+                                         $fila = "<td style='background-color:red'" . $fechaini . " Hasta las: " . $str_hora_fin;
+                                         //   $fila = "<td rowspan=".$segundo." style='background-color:red'" . $fechaini . " Hasta las: " . $str_hora_fin ." ".$descr. "</td>";
+                                         $segundo = true;
+                                         $primero = false;
+                                         echo $fila;
+
+                                     }
+                                     //14-15
+                                     else if ($fechaini == $fecha && $str_hora_ini == $horaCatorce && $str_hora_fin == $horaQuinze) {
+                                         $fila = "<td style='background-color:red'" . $fechaini . " Hasta las: " . $str_hora_fin . " " . $descr;
+                                         $primero = true;
+                                         echo $fila;
+                                     } else if ($fechaini == $fecha && $str_hora_ini == $horaCatorce && $str_hora_fin == $horaDieciseis && $primero = true) {
+                                         $fila = "<td style='background-color:red'" . $fechaini . " Hasta las: " . $str_hora_fin;
+                                         //   $fila = "<td rowspan=".$segundo." style='background-color:red'" . $fechaini . " Hasta las: " . $str_hora_fin ." ".$descr. "</td>";
+                                         $segundo = true;
+                                         $primero = false;
+                                         echo $fila;
+
+                                     }
+                                     //15-16
+                                     else if ($fechaini == $fecha && $str_hora_ini == $horaQuinze && $str_hora_fin == $horaDieciseis) {
+                                         $fila = "<td style='background-color:red'" . $fechaini . " Hasta las: " . $str_hora_fin . " " . $descr;
+                                         $primero = true;
+                                         echo $fila;
+                                     } else if ($fechaini == $fecha && $str_hora_ini == $horaQuinze && $str_hora_fin == $horaDiecisiete && $primero = true) {
+                                         $fila = "<td style='background-color:red'" . $fechaini . " Hasta las: " . $str_hora_fin;
+                                         //   $fila = "<td rowspan=".$segundo." style='background-color:red'" . $fechaini . " Hasta las: " . $str_hora_fin ." ".$descr. "</td>";
+                                         $segundo = true;
+                                         $primero = false;
+                                         echo $fila;
+
+                                     }
+                                     //16-17
+                                     else if ($fechaini == $fecha && $str_hora_ini == $horaDieciseis && $str_hora_fin == $horaDiecisiete) {
+                                         $fila = "<td style='background-color:red'" . $fechaini . " Hasta las: " . $str_hora_fin . " " . $descr;
+                                         $primero = true;
+                                         echo $fila;
+                                     } else if ($fechaini == $fecha && $str_hora_ini == $horaDieciseis && $str_hora_fin == $horaDieciocho && $primero = true) {
+                                         $fila = "<td style='background-color:red'" . $fechaini . " Hasta las: " . $str_hora_fin;
+                                         //   $fila = "<td rowspan=".$segundo." style='background-color:red'" . $fechaini . " Hasta las: " . $str_hora_fin ." ".$descr. "</td>";
+                                         $segundo = true;
+                                         $primero = false;
+                                         echo $fila;
+
+                                     }
+
+                                     //17-18
+                                     else if ($fechaini == $fecha && $str_hora_ini == $horaDiecisiete && $str_hora_fin == $horaDieciocho) {
+                                         $fila = "<td style='background-color:red'" . $fechaini . " Hasta las: " . $str_hora_fin . " " . $descr;
+                                         $primero = true;
+                                         echo $fila;
+                                     } else if ($fechaini == $fecha && $str_hora_ini == $horaDiecisiete && $str_hora_fin == $horaDiecinueve && $primero = true) {
+                                         $fila = "<td style='background-color:red'" . $fechaini . " Hasta las: " . $str_hora_fin;
+                                         //   $fila = "<td rowspan=".$segundo." style='background-color:red'" . $fechaini . " Hasta las: " . $str_hora_fin ." ".$descr. "</td>";
+                                         $segundo = true;
+                                         $primero = false;
+                                         echo $fila;
+
+                                     }
+                                     //18-19
+                                     else if ($fechaini == $fecha && $str_hora_ini == $horaDieciocho && $str_hora_fin == $horaDiecinueve) {
+                                         $fila = "<td style='background-color:red'" . $fechaini . " Hasta las: " . $str_hora_fin . " " . $descr;
+                                         $primero = true;
+                                         echo $fila;
+                                     } else if ($fechaini == $fecha && $str_hora_ini == $horaDieciocho && $str_hora_fin == $horaVente && $primero = true) {
+                                         $fila = "<td style='background-color:red'" . $fechaini . " Hasta las: " . $str_hora_fin;
+                                         //   $fila = "<td rowspan=".$segundo." style='background-color:red'" . $fechaini . " Hasta las: " . $str_hora_fin ." ".$descr. "</td>";
+                                         $segundo = true;
+                                         $primero = false;
+                                         echo $fila;
+
+                                     }
+                                     //19-20
+                                     else if ($fechaini == $fecha && $str_hora_ini == $horaDiecinueve && $str_hora_fin == $horaVente) {
+                                         $fila = "<td style='background-color:red'" . $fechaini . " Hasta las: " . $str_hora_fin . " " . $descr;
+                                         $primero = true;
+                                         echo $fila;
+                                     }
 
 
 

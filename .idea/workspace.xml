@@ -72,8 +72,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/templates/estado.tpl.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="390">
-              <caret line="285" column="44" lean-forward="true" selection-start-line="285" selection-start-column="44" selection-end-line="285" selection-end-column="44" />
+            <state relative-caret-position="331">
+              <caret line="384" column="36" lean-forward="true" selection-start-line="384" selection-start-column="36" selection-end-line="384" selection-end-column="36" />
               <folding>
                 <element signature="n#style#0;n#th#0;n#!!top" expanded="true" />
                 <element signature="n#style#0;n#th#0;n#!!top" expanded="true" />
@@ -96,8 +96,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/Controllers/EstadoController.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="392">
-              <caret line="145" column="2" selection-start-line="145" selection-start-column="2" selection-end-line="145" selection-end-column="2" />
+            <state relative-caret-position="542">
+              <caret line="77" column="57" lean-forward="true" selection-start-line="77" selection-start-column="57" selection-end-line="77" selection-end-column="57" />
               <folding>
                 <element signature="e#40#62#0#PHP" expanded="true" />
                 <element signature="n#style#0;n#td#0;n#!!top" expanded="true" />
@@ -204,8 +204,8 @@
     </include_path>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="369" />
-    <option name="y" value="62" />
+    <option name="x" value="60" />
+    <option name="y" value="88" />
     <option name="width" value="1540" />
     <option name="height" value="745" />
   </component>
@@ -358,15 +358,15 @@
       <workItem from="1583827511224" duration="13764000" />
       <workItem from="1583914021021" duration="14223000" />
       <workItem from="1584000426064" duration="230000" />
-      <workItem from="1584000751066" duration="12032000" />
+      <workItem from="1584000751066" duration="13938000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="438307000" />
+    <option name="totallyTimeSpent" value="440213000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="0" y="111" width="1540" height="745" extended-state="0" />
+    <frame x="60" y="88" width="1540" height="745" extended-state="0" />
     <editor active="true" />
     <layout>
       <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.22587131" />
@@ -683,8 +683,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Controllers/EstadoController.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="392">
-          <caret line="145" column="2" selection-start-line="145" selection-start-column="2" selection-end-line="145" selection-end-column="2" />
+        <state relative-caret-position="542">
+          <caret line="77" column="57" lean-forward="true" selection-start-line="77" selection-start-column="57" selection-end-line="77" selection-end-column="57" />
           <folding>
             <element signature="e#40#62#0#PHP" expanded="true" />
             <element signature="n#style#0;n#td#0;n#!!top" expanded="true" />
@@ -697,8 +697,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/templates/estado.tpl.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="390">
-          <caret line="285" column="44" lean-forward="true" selection-start-line="285" selection-start-column="44" selection-end-line="285" selection-end-column="44" />
+        <state relative-caret-position="331">
+          <caret line="384" column="36" lean-forward="true" selection-start-line="384" selection-start-column="36" selection-end-line="384" selection-end-column="36" />
           <folding>
             <element signature="n#style#0;n#th#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#th#0;n#!!top" expanded="true" />
