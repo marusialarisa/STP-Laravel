@@ -123,8 +123,27 @@ class EstadoController extends Controller
     }
 
 
+  /*  public function consultaDiaHora( pHora ){
 
 
+        $usuario = "root";
+        $contrasena = "linuxlinux";
+        $servidor = 'localhost';
+        $db = "salas";
+
+        $conexion = mysqli_connect($servidor, $usuario, $contrasena);
+        $basedatos = mysqli_select_db($conexion, $db);
+        $consulta="SELECT * FROM reserva";
+
+        $resultado = mysqli_query($conexion, $consulta);
+
+
+            while ($columna = mysqli_fetch_array($resultado)) {
+
+                var_dump($columna['fecha_hora_inicio']);
+            }
+    }
+*/
 
     public function logIn(){
         var_dump($_POST);
